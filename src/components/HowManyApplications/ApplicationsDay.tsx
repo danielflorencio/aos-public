@@ -1,6 +1,6 @@
 import './styles.css'
 const mvpTechStack: string[] = ['Git', 'HTML', 'JavaScript', 'TypeScript', 'BootStrap']
-const fullTechStack: string[] = [...mvpTechStack, 'Redux', 'Sass', 'NextJs', 'FramerMotion', 'React Native', 'Express Js', 'MongoDb', 'PostgreSQL', 'Jest']
+const fullTechStack: string[] = [...mvpTechStack, 'Redux', 'Sass', 'NextJs', 'React Native', 'FramerMotion', 'Express Js', 'MongoDb', 'PostgreSQL', 'Jest']
 
 const benchmarkParameters: {stackItemsBenchmark: number; solvedQuestionsBenchmark: number; flashcardsBenchmark: number} = {
     stackItemsBenchmark: mvpTechStack.length,
@@ -39,7 +39,8 @@ export default function ShowAnswer(){
                 dailyApplications <= (actualTechStack.length - mvpTechStack.length + 1)
             ) return true
         }
-        for(dailyApplications = 1; verifyDailyApplications(); dailyApplications++){
+        for(dailyApplications = 1; verifyDailyApplications(); dailyApplications++){ 
+            // This for loop is responsible for the actual count of how many applications you can do.
             arrayOfAnswers = [...arrayOfAnswers, 'Daily applications: ' +  dailyApplications.toString() + ' Actual Tech Stack: ' + actualTechStack.length.toString() + ' Actual Solved Questions: ' + actualSolvedQuestions.toString()]
         }
 
@@ -54,7 +55,7 @@ export default function ShowAnswer(){
             console.log('techStackAdvancement: ', techStackAdvancement)
             console.log('solvedQuestionsAdvancement: ', solvedQuestionsAdvancement)
             console.log('flashcardsAdvancement: ', flashcardsAdvancement)
-            
+
             // Now i have to make the actual verification below.
 
             // Code the verification above.

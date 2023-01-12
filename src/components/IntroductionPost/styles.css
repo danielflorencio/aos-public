@@ -1,0 +1,27 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1 { 
+    font-size: 38px;
+}
+h2 {
+    width: 55vw;
+}
+.post-container{
+    border: 1px solid black;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    width: 500px;
+}
+.post-title{
+    /* text-align: center; */
+    /* align-self: center; */
+}
+p, .subtitle{
+    text-align: left;
+}
