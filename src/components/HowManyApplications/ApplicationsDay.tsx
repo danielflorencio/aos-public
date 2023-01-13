@@ -1,20 +1,22 @@
 import './styles.css'
-const mvpTechStack: string[] = ['Git', 'HTML', 'JavaScript', 'TypeScript', 'BootStrap']
-const fullTechStack: string[] = [...mvpTechStack, 'Redux', 'Sass', 'NextJs', 'React Native', 'FramerMotion', 'Express Js', 'MongoDb', 'PostgreSQL', 'Jest']
+
+const mvpTechStack: string[] = ['Git', 'HTML', 'CSS', 'JavaScript', 'React']
+const fullTechStack: string[] = [...mvpTechStack, 'BootStrap', 'TypeScript', 'Redux', 'Sass', 'NextJs','Node Js', 'Express Js', 'MongoDb', 'PostgreSQL', 'React Native', 'Jest', 'Tailwind CSS','FramerMotion']
 
 const benchmarkParameters: {stackItemsBenchmark: number; solvedQuestionsBenchmark: number; flashcardsBenchmark: number} = {
     stackItemsBenchmark: mvpTechStack.length,
-    solvedQuestionsBenchmark: 6,
-    flashcardsBenchmark: 3
+    solvedQuestionsBenchmark: 8,
+    flashcardsBenchmark: 3 // Ignore this line -- Code for the next feature of the app.
 }
 
+
 // Insert your current data below this line
-
-const actualTechStack: string[] = [...mvpTechStack, 'Redux']
+const actualTechStack: string[] = [...mvpTechStack, 'Redux', 'Bootstrap', 'TypeScript']
 const actualSolvedQuestions: number = 20
-const actualFlashcards: number = 3
-
 // Insert your current data above this line
+
+// const actualFlashcards: number = 3 --- Ignore this line -- Code for the next feature of the app.
+
 
 export default function ShowAnswer(){
     let focus: string[] = ['']
@@ -29,47 +31,51 @@ export default function ShowAnswer(){
     } else{
         
         function verifyDailyApplications(){ 
-            // This function verifies how many applications you can do, considering your benchmarks and how many goals you have achieved overall.
-            // It could surely be put inside the for() loop without the need of this function...
-            // But i put it that way so the code becomes more readable, without the need for one giant for() line of code.
+            // This function verifies how many applications you can do considering your the benchmarks you have achieved.
+            // It could be put inside the for() loop without the need of this function...
+            // But i put it that way so the code becomes more readable.
             // If you wanna add more conditionals and/or benchmark verifications, just add another '&&' and the condition right below.
+
             if(
                 dailyApplications <= (actualSolvedQuestions / benchmarkParameters.solvedQuestionsBenchmark) 
                 && 
                 dailyApplications <= (actualTechStack.length - mvpTechStack.length + 1)
             ) return true
+        
         }
+
+
+        // The loop below counts how many applications you can do.
         for(dailyApplications = 1; verifyDailyApplications(); dailyApplications++){ 
-            // This for loop is responsible for the actual count of how many applications you can do.
             arrayOfAnswers = [...arrayOfAnswers, 'Daily applications: ' +  dailyApplications.toString() + ' Actual Tech Stack: ' + actualTechStack.length.toString() + ' Actual Solved Questions: ' + actualSolvedQuestions.toString()]
         }
 
-        function verifyFocus(){ // This function verifies where you should focus your efforts now. 
+
+        // The function below analyzes where you should focus your efforts now.
+        function verifyFocus(){
 
             // The conditionals below verify which of your progress markers are the farthest (verify this word) away from the benchmarks.
 
-            let techStackAdvancement: number = (actualTechStack.length - (mvpTechStack.length - 1))/(dailyApplications - 1)
-            let solvedQuestionsAdvancement: number = actualSolvedQuestions/(benchmarkParameters.solvedQuestionsBenchmark*dailyApplications)
-            let flashcardsAdvancement: number = actualFlashcards/dailyApplications
+            let techStackAdvancement: number = actualTechStack.length - (mvpTechStack.length - 1)
+            let solvedQuestionsAdvancement: number = actualSolvedQuestions/benchmarkParameters.solvedQuestionsBenchmark            
+            // let flashcardsAdvancement: number = actualFlashcards/dailyApplications --- Code for the next feature of the app --- Ignore this line.
 
-            console.log('techStackAdvancement: ', techStackAdvancement)
-            console.log('solvedQuestionsAdvancement: ', solvedQuestionsAdvancement)
-            console.log('flashcardsAdvancement: ', flashcardsAdvancement)
+
 
             // Now i have to make the actual verification below.
-
-            // Code the verification above.
-
-
-            // Main Function Code 
-            if(actualSolvedQuestions > benchmarkParameters.solvedQuestionsBenchmark*dailyApplications && actualFlashcards < benchmarkParameters.flashcardsBenchmark*dailyApplications){
-                focus[0] = 
-                'You have solved ' 
-                + actualSolvedQuestions.toString() + 
-                " questions, while the amount of flash cards you've done is only " +
-                actualFlashcards.toString() +
-                '. You should focus on doing more flashcards now.'
-            } 
+            if((techStackAdvancement - solvedQuestionsAdvancement) >= 1){
+                focus[0] = 'Considering the amount of skills you have, you should be able to do ' + techStackAdvancement.toString() + ' applications a day...'
+                focus[1] = 'But your amount of solved LeetCode questions is only ' + actualSolvedQuestions.toString() + ', limiting you to only ' + Math.floor(solvedQuestionsAdvancement).toString() + ' Applications a day.'
+                focus[2] = 'Do more LeetCode questions in order to increase your daily limit.'
+            } else if((solvedQuestionsAdvancement - techStackAdvancement) >= 10){
+                focus[0] = 'Considering the amount of LeetCode questions you have solved, you should be able to do ' + Math.floor(solvedQuestionsAdvancement).toString() + '...'
+                focus[1] = 'But the amount of skills you have is only ' + techStackAdvancement.toString() + ' units bigger than the minimum amount of skills necessary to get hired, limiting you to only ' + techStackAdvancement.toString() + ' Applications a day.'
+                focus[2] = 'Learn more actual job skills to increase your daily limit.'
+            } else{
+                focus[0] = 'The advancement of your tech skills and LeetCode questions solved is evenly distributed.'
+                focus[1] = 'You should be able to apply to ' + dailyApplications.toString() + ' Jobs a day with no issues.'
+                focus[2] = 'Remember to keep studying everyday in order to increase this number.'
+            }
         }
 
         verifyFocus()
@@ -85,7 +91,10 @@ export default function ShowAnswer(){
                 {stringElements}
             </h3>
             <h3>
-                {focus[0]}
+                {focus.map(answer => (
+                    <p key={answer}>{answer}</p>
+                ))
+                }
             </h3>
         </>
     )    

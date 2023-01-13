@@ -6,8 +6,8 @@ function App() {
 
   return (
     <>
-      <IntroductionPost/>
-      {/* <ShowAnswer/> */}
+      {/* <IntroductionPost/> */}
+      <ShowAnswer/>
     </>
   )
 }

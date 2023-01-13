@@ -8,15 +8,16 @@ h1 {
     font-size: 38px;
 }
 h2 {
-    width: 55vw;
+    /* width: 55vw; */
 }
 .post-container{
+    padding: 0 5vw;
     border: 1px solid black;
     /* display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; */
-    width: 500px;
+    width: 600px;
 }
 .post-title{
     /* text-align: center; */

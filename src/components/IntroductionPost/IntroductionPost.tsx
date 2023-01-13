@@ -6,15 +6,14 @@ export default function IntroductionPost(){
                 <h1>Welcome to the Application Optimizing System.</h1>
                 <h2>The All-in-on solution maximize your efforts and further develop your Software Engineering career.</h2>
             </div>
-            
-            <div className='message-container'>
-                    <div className='profile-image'>IMAGE</div>
-                    <div className='message-text'>MESSAGE</div>
-                </div>
+            {/* <div className='message-container'>
+                <div className='profile-image'>IMAGE</div>
+                <div className='message-text'>MESSAGE</div>
+            </div> */}
             <div style={{display: 'grid', placeItems: 'center', marginTop: '10vh'}}>
                 <div className='post-container'>
-                    <h2 className='post-title'>Post title</h2>
-                    <p>Text</p>
+                    <h2 className='post-title'></h2>
+                    <p>In this post you are gonna learn exactly how to use the app to track your efforts and make sure you are focusing on the right thing, and not "wasting" your time in what should not be a priority at the moment.</p>
                     <p>Text</p>
 
                     <h3 className='subtitle'>Post subtitle</h3>
