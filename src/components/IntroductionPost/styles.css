@@ -1,23 +1,20 @@
 .header{
     display: flex;
     align-items: center;
-    justify-content: center;
+    text-align: left;
     flex-direction: column;
 }
 h1 { 
-    font-size: 38px;
+    font-size: 36px;
 }
 h2 {
-    /* width: 55vw; */
+    font-size: 20px;    
 }
 .post-container{
-    padding: 0 5vw;
-    border: 1px solid black;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
-    width: 600px;
+    padding: 0rem;
+}
+.text-container{
+    max-width: 500px;
 }
 .post-title{
     /* text-align: center; */
@@ -25,4 +22,7 @@ h2 {
 }
 p, .subtitle{
     text-align: left;
+}
+.subtitle{
+    margin-top: 6vh;
 }
