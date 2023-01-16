@@ -1,12 +1,13 @@
+import ApplicationsCalculator from '../ApplicationsCalculator/ApplicationsCalculator'
 import './styles.css'
 export default function IntroductionPost(){
     return(
         <div>
             <div className='header'>
-                <h1 className='text-container'>Welcome to AOS, the Application Optimizing System.</h1>
-                <h2 className='text-container'>The All-in-one solution to maximize your efforts and further develop your Software Engineering career.</h2>            
+                {/* <h1 className='text-container'>Welcome to AOS, the Application Optimizing System.</h1>
+                <h2 className='text-container'>The All-in-one solution to maximize your efforts and further develop your Software Engineering career.</h2>             */}
                 <div className='post-container text-container'>
-                    <h2 className='post-title'></h2>
+                    {/* <h2 className='post-title'></h2>
                     <p>In this post you are gonna learn exactly how to use this app to track your efforts and make sure you are focusing on the right thing, and not "wasting" your time in what should not be a priority at the moment.</p>
 
                     <h3 className='subtitle'>But why did i make it? The answer is simple... To optimize my progress.</h3>
@@ -52,7 +53,11 @@ export default function IntroductionPost(){
                     <p>For each time your amount of tech skills and solved questions surpass your benchmarks, the AOS will "Allow you" to do one more application per day.</p>
                     <p><strong>So let's say you surpass your benchmarks for 2 times, you are gonna be able to do 2 applications a day. If you surpass your benchmarks for 8 times, you are gonna be able to do 8 applications a day.</strong></p>
  
-                    <p>This way, you can easily control how much time you spend <strong>coding</strong> a day, how much time you spend doing <strong>LeetCode</strong> questions a day, and how much time you spend <strong>Applying for jobs</strong> a day.</p>
+                    <p>This way, you can easily control how much time you spend <strong>coding</strong> a day, how much time you spend doing <strong>LeetCode</strong> questions a day, and how much time you spend <strong>Applying for jobs</strong> a day.</p> */}
+                
+                    <h3 style={{marginTop: '10vh'}}>Now, let's start with the first question...</h3>
+                    <ApplicationsCalculator/>
+
                 </div>
             </div>
         </div>

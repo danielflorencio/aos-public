@@ -7,7 +7,9 @@ function App() {
   return (
     <>
       <IntroductionPost/>
-      <ApplicationsCalculator/>
+      {/* <div style={{width: '100vw', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}} className='post-container text-container'> */}
+        {/* <ApplicationsCalculator/> */}
+      {/* </div> */}
     </>
   )
 }
