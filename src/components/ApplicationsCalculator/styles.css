@@ -1,7 +1,6 @@
 .application-container{
-    height: 80vh;
-    display: grid;
-    place-items: center;
+    text-align: left;
+    width: 500px;
 }
 button, input{
     width: 100px;
@@ -9,8 +8,18 @@ button, input{
     border-radius: 8px;
 }
 .skill-selection{
-    height: fit-content;
-    margin-bottom: 3vh;
     display: flex;
     flex-wrap: wrap;
+    width: 500px;
+    background-color: #ccc;
+    min-height: 1.6rem;
+    border-radius: 4px;
+    margin: 5px 0px;
+    padding: 0 6px;
+}
+label, input{
+    display: block;
+}
+label{
+    max-width: 500px;
 }

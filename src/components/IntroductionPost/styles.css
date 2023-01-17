@@ -6,6 +6,7 @@
 }
 h1 { 
     font-size: 36px;
+    line-height: 2.5rem;
 }
 h2 {
     font-size: 20px;    
@@ -16,24 +17,9 @@ h2 {
 .text-container{
     max-width: 500px;
 }
-.post-title{
-    /* text-align: center; */
-    /* align-self: center; */
-}
 p, .subtitle{
     text-align: left;
 }
 .subtitle{
     margin-top: 6vh;
-}
-label, input{
-    display: block;
-}
-.skill-selection{
-    width: 100%;
-    background-color: #ccc;
-    min-height: 1.6rem;
-    border-radius: 4px;
-    margin: 5px 0px;
-    padding: 0 6px;
 }
